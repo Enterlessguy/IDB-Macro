@@ -133,7 +133,7 @@ class GuardBackend:
 def test_guard_waits_for_a_real_window_then_locks_to_it():
     b = GuardBackend()
     g = SmartGuard(b, own_pid=1)
-    b.active = WindowTarget(handle=1, pid=1)  # I-DB Macro itself is active after pressing Start
+    b.active = WindowTarget(handle=1, pid=1)  # IDB-Macro itself is active after pressing Start
     assert g.check(False).startswith("Waiting")
     b.active = WindowTarget(handle=10, title="Game", pid=100)
     assert g.check(False) == ""
@@ -150,7 +150,7 @@ def test_guard_never_clicks_the_taskbar_or_itself():
     b.under = WindowTarget(handle=3, window_class="Shell_TrayWnd", pid=50)
     assert "taskbar" in g.check(True)
     b.under = WindowTarget(handle=4, window_class="Qt", pid=1)
-    assert "I-DB Macro" in g.check(True)
+    assert "IDB-Macro" in g.check(True)
     assert g.check(False) == ""  # key presses don't care what is under the cursor
 
 

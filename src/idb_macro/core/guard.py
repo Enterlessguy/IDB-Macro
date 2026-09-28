@@ -22,9 +22,9 @@ class SmartGuard:
     """Decides, before every foreground action, whether it is safe to send.
 
     ``focus_lock``: input only goes to the window that was active when the run
-    started (the first window other than I-DB Macro itself). Switching to
+    started (the first window other than IDB-Macro itself). Switching to
     another app pauses the run instead of clicking or typing into it.
-    ``avoid_shell``: clicks over the taskbar, the desktop or I-DB Macro are
+    ``avoid_shell``: clicks over the taskbar, the desktop or IDB-Macro are
     skipped.
     """
 
@@ -43,7 +43,7 @@ class SmartGuard:
             if active is not None:
                 if active.pid == self.own_pid:
                     return ("Waiting: switch to the window you want to use" if self.locked is None
-                            else "Paused while I-DB Macro is the active window")
+                            else "Paused while IDB-Macro is the active window")
                 if self.locked is None:
                     self.locked = active
                 elif active.handle != self.locked.handle:
@@ -53,7 +53,7 @@ class SmartGuard:
             under = self.backend.window_at(x, y)
             if under is not None:
                 if under.pid == self.own_pid:
-                    return "Skipped: the cursor is over I-DB Macro"
+                    return "Skipped: the cursor is over IDB-Macro"
                 if under.window_class in SHELL_CLASSES:
                     return "Skipped: the cursor is over the taskbar or desktop"
         return ""

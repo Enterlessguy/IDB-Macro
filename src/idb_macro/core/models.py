@@ -509,8 +509,8 @@ def macros_to_document(macros: list[Macro]) -> dict:
 def macros_from_document(doc: Any) -> list[Macro]:
     doc = _dict(doc, "file")
     if doc.get("format") != FORMAT_ID:
-        raise ValidationError("this is not an I-DB Macro file")
+        raise ValidationError("this is not an IDB-Macro file")
     version = doc.get("version")
     if not isinstance(version, int) or isinstance(version, bool) or version > FORMAT_VERSION:
-        raise ValidationError("this file was made by a newer version of I-DB Macro")
+        raise ValidationError("this file was made by a newer version of IDB-Macro")
     return [Macro.from_dict(m) for m in _list(doc.get("macros", []), "macros", MAX_MACROS)]

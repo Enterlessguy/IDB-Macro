@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
     def __init__(self, controller: Controller):
         super().__init__()
         self.c = controller
-        self.setWindowTitle("I-DB Macro")
+        self.setWindowTitle("IDB-Macro")
         self.setWindowIcon(theme.app_icon())
         self.setMinimumSize(980, 640)
         self._tray_hint_shown = False
@@ -117,7 +117,7 @@ class MainWindow(QMainWindow):
             38, 38, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
         names = QVBoxLayout()
         names.setSpacing(0)
-        title = QLabel("I-DB Macro")
+        title = QLabel("IDB-Macro")
         title.setFont(theme.ui_font(17, QFont.Weight.Bold))
         title.setStyleSheet(f"color: {theme.INK};")
         sub = QLabel("Intelligence Database")
@@ -188,9 +188,9 @@ class MainWindow(QMainWindow):
         if not QSystemTrayIcon.isSystemTrayAvailable():
             return
         tray = QSystemTrayIcon(theme.app_icon(), self)
-        tray.setToolTip("I-DB Macro")
+        tray.setToolTip("IDB-Macro")
         menu = QMenu()
-        menu.addAction("Show I-DB Macro").triggered.connect(self.show_from_tray)
+        menu.addAction("Show IDB-Macro").triggered.connect(self.show_from_tray)
         menu.addSeparator()
         self.tray_actions: dict[str, QAction] = {}
         for key, _icon, text in NAV:
@@ -226,7 +226,7 @@ class MainWindow(QMainWindow):
     def _update_available(self, version: str) -> None:
         self.nav["updates"].hint = "NEW"
         self.nav["updates"].update()
-        self.statusBar().showMessage(f"I-DB Macro {version} is available. Open Updates to install it.", 15000)
+        self.statusBar().showMessage(f"IDB-Macro {version} is available. Open Updates to install it.", 15000)
 
     def _sync_modes(self) -> None:
         self.smart_toggle.blockSignals(True)
@@ -244,7 +244,7 @@ class MainWindow(QMainWindow):
             text = dict((k, t) for k, _i, t in NAV)[tool]
             self.tray_actions[tool].setText(f"{'Stop' if running else 'Start'} {text}")
             active = [t for k, _i, t in NAV if self.c.is_running(k) or (k == tool and running)]
-            self.tray.setToolTip("I-DB Macro" + (f" — running: {', '.join(active)}" if active else ""))
+            self.tray.setToolTip("IDB-Macro" + (f" — running: {', '.join(active)}" if active else ""))
         if not running and message not in ("", "Stopped", "Finished"):
             self.statusBar().showMessage(message, 10000)
 
@@ -289,7 +289,7 @@ class MainWindow(QMainWindow):
             event.ignore()
             self.hide()
             if not self._tray_hint_shown:
-                self.tray.showMessage("I-DB Macro is still running",
+                self.tray.showMessage("IDB-Macro is still running",
                                       "Hotkeys keep working. Use the tray icon to open it or quit.",
                                       QSystemTrayIcon.MessageIcon.Information, 4000)
                 self._tray_hint_shown = True

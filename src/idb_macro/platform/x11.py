@@ -227,7 +227,7 @@ class X11Backend(Backend):
             deepest = chain[-1]
             target = self._describe(client, deepest)
             if target.pid == self.own_pid:
-                raise BackendError("That is I-DB Macro itself. Pick another window.")
+                raise BackendError("That is IDB-Macro itself. Pick another window.")
             cx, cy = self._to_window(client, x, y)
             dx, dy = self._to_window(deepest, x, y)
             return PickResult(target, TargetPoint(cx, cy, deepest, dx, dy))

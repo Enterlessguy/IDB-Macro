@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Renamed the app from "I-DB Macro" to "IDB-Macro" to match the repository.
+  Settings, saved setups and exported macro files are unaffected.
+
 ## 1.2.0
 
 - Updates page: shows the latest GitHub release and its notes. The Windows

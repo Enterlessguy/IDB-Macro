@@ -1,4 +1,4 @@
-# I-DB Macro design
+# IDB-Macro design
 
 ## Goal
 
@@ -44,7 +44,7 @@ synthetic input. Background mode works with apps that read ordinary window
 messages (Win32, WinForms, WPF, most Qt and GTK apps, Notepad, many launchers
 and idle games). It usually does **not** work with apps that read raw input or
 DirectInput (most 3D games), with anti-cheat-protected games, or with elevated
-windows when I-DB Macro is not elevated. The UI has a **Test** button so users
+windows when IDB-Macro is not elevated. The UI has a **Test** button so users
 can check a target before relying on it, and an optional "spoof focus" switch
 that helps some engines that drop input while they are unfocused.
 

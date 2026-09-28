@@ -2,7 +2,7 @@
 
 <img src="src/idb_macro/assets/cube.png" width="96" alt="Intelligence Database cube">
 
-# I-DB Macro
+# IDB-Macro
 
 **Autoclicker, key repeater and macro recorder in one app, including in background windows.**
 
@@ -13,7 +13,7 @@
 </div>
 
 Most autoclickers and macro tools are either too simple, buggy, or full of
-ads. I-DB Macro puts three tools in one clean app:
+ads. IDB-Macro puts three tools in one clean app:
 
 | | |
 | --- | --- |
@@ -45,7 +45,7 @@ uses, so the file works on someone else's PC too.
   about your settings and turns on safety checks. Input only goes to the
   window you started in: if you Alt+Tab away, it pauses instead of clicking or
   typing into the other app, and it releases held keys. Clicks never land on
-  the taskbar, the desktop or I-DB Macro itself.
+  the taskbar, the desktop or IDB-Macro itself.
 - **Dumb mode** turns the whole app into one plain autoclicker: clicks per
   second, left or right button, and a Start button. Click "Back to the full
   app" to return. It has its own settings, so your full setups stay as they
@@ -53,13 +53,13 @@ uses, so the file works on someone else's PC too.
 
 ## Background mode
 
-Pick a window, and I-DB Macro sends clicks and keys **to that window only**.
+Pick a window, and IDB-Macro sends clicks and keys **to that window only**.
 Your cursor doesn't move, focus doesn't change, and the window can stay
 minimized or behind other windows.
 
 How it works on Windows: input goes to the exact control you picked, as window
 messages. Many apps also check whether a mouse button or Ctrl is *really*
-held down, and ignore input when it isn't. I-DB Macro briefly shares input
+held down, and ignore input when it isn't. IDB-Macro briefly shares input
 state with the target app's thread so the app sees the buttons and modifiers
 it expects. That thread is the only thing affected; your own keyboard and
 mouse are untouched. [docs/DESIGN.md](docs/DESIGN.md) has the full details.
@@ -71,7 +71,7 @@ mouse are untouched. [docs/DESIGN.md](docs/DESIGN.md) has the full details.
 >
 > - 3D games that read raw input or DirectInput
 > - games with anti-cheat (don't use it there; you might get banned)
-> - apps running as administrator, unless you run I-DB Macro as
+> - apps running as administrator, unless you run IDB-Macro as
 >   administrator too
 > - Chromium-based apps (Discord, browsers, Electron apps) while they are
 >   **minimized**. They accept background input fine while they're open behind
@@ -85,7 +85,7 @@ mouse are untouched. [docs/DESIGN.md](docs/DESIGN.md) has the full details.
 
 ### Option 1: Download the app (recommended)
 
-**[⬇ Download I-DB Macro for Windows](https://github.com/Enterlessguy/IDB-Macro/releases/latest/download/IDB-Macro-windows-x64.zip)**
+**[⬇ Download IDB-Macro for Windows](https://github.com/Enterlessguy/IDB-Macro/releases/latest/download/IDB-Macro-windows-x64.zip)**
 (or see all [releases](https://github.com/Enterlessguy/IDB-Macro/releases)).
 
 1. Unzip `IDB-Macro-windows-x64.zip` anywhere, for example your Documents

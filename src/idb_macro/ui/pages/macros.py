@@ -296,7 +296,7 @@ class MacrosPage(Page):
         self._reload_library(remaining[min(index, len(remaining) - 1)].id if remaining else "")
 
     def import_file(self) -> None:
-        path, _ = QFileDialog.getOpenFileName(self, "Import macros", str(Path.home()), "I-DB Macro files (*.json)")
+        path, _ = QFileDialog.getOpenFileName(self, "Import macros", str(Path.home()), "IDB-Macro files (*.json)")
         if not path:
             return
         try:
@@ -331,7 +331,7 @@ class MacrosPage(Page):
             return
         safe = "".join(ch if ch.isalnum() or ch in " -_" else "_" for ch in self.current.name).strip() or "macro"
         path, _ = QFileDialog.getSaveFileName(self, "Export macro", str(Path.home() / f"{safe}.json"),
-                                              "I-DB Macro files (*.json)")
+                                              "IDB-Macro files (*.json)")
         if not path:
             return
         try:

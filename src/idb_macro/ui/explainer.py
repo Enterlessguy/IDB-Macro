@@ -16,7 +16,7 @@ C = theme.color
 TEXT = {
     "background": (
         "Clicking a window in the background",
-        "You keep working in one window while I-DB Macro clicks a game or app behind it. Your mouse "
+        "You keep working in one window while IDB-Macro clicks a game or app behind it. Your mouse "
         "doesn't move and nothing pops up. The window can even be minimized, as long as the app "
         "accepts it (Discord and browsers don't while minimized). Use the test click to check.",
         "Each click is sent as window messages (WM_MOUSEMOVE, WM_LBUTTONDOWN/UP) straight to the "
@@ -29,7 +29,7 @@ TEXT = {
     "keys": (
         "Why key presses need a length",
         "Games look at the keyboard about 60 times a second. A press that's too short can happen "
-        "between two looks and gets missed, which is why a jump sometimes didn't happen. I-DB Macro "
+        "between two looks and gets missed, which is why a jump sometimes didn't happen. IDB-Macro "
         "holds each press for a short time (40 ms by default), so the game always sees it. Hotkeys "
         "like F6 work from any app.",
         "Games commonly poll key state once per frame (GetAsyncKeyState / raw input snapshots, "
@@ -57,10 +57,10 @@ TEXT = {
         "key presses pause, so nothing lands in your chat or browser, and held keys are let go. "
         "Switch back and it carries on. It also never clicks the taskbar or desktop.",
         "Before each foreground action, SmartGuard compares GetForegroundWindow() with the window "
-        "locked at the first action (skipping I-DB Macro's own process). On a mismatch the action "
+        "locked at the first action (skipping IDB-Macro's own process). On a mismatch the action "
         "is skipped and the run reports why; Hold-down mode releases its keys and presses them "
         "again on return. For pointer actions, WindowFromPoint → GetAncestor(GA_ROOT) is checked "
-        "against shell window classes (Shell_TrayWnd, Progman, WorkerW, …) and I-DB Macro's own "
+        "against shell window classes (Shell_TrayWnd, Progman, WorkerW, …) and IDB-Macro's own "
         "process ID.",
     ),
 }
@@ -210,7 +210,7 @@ class Stage(QWidget):
         _badge(p, QPointF(game.center().x() + 30, game.bottom() - 28), clicks, C(theme.SUCCESS))
 
         _window(p, work, "Your work  ·  active", C(theme.PRIMARY))
-        full = "Hi! Writing this email while I-DB Macro clicks the game for me."
+        full = "Hi! Writing this email while IDB-Macro clicks the game for me."
         shown = full[: int(t * 12) % (len(full) + 18)]
         p.setPen(C(theme.MUTED))
         p.setFont(theme.ui_font(13))
@@ -221,7 +221,7 @@ class Stage(QWidget):
         _logo(p, src, 44)
         p.setPen(C(theme.FAINT))
         p.setFont(theme.ui_font(11, QFont.Weight.DemiBold))
-        p.drawText(QRectF(src.x() - 60, src.y() + 20, 120, 16), Qt.AlignmentFlag.AlignHCenter, "I-DB Macro")
+        p.drawText(QRectF(src.x() - 60, src.y() + 20, 120, 16), Qt.AlignmentFlag.AlignHCenter, "IDB-Macro")
 
     def _keys(self, p: QPainter, r: QRectF, t: float) -> None:
         _backdrop(p, r, QPointF(r.center().x(), r.top() + 60))
@@ -237,7 +237,7 @@ class Stage(QWidget):
                    "▲ each line = the game checking the keyboard (once per frame, ≈16 ms)")
         lane_h, first = 58, r.top() + 58
         lanes = [("Instant tap", "0 ms", 0.0, C(theme.DANGER)),
-                 ("I-DB Macro", "40 ms", frame_px * 1.25, C(theme.SUCCESS))]
+                 ("IDB-Macro", "40 ms", frame_px * 1.25, C(theme.SUCCESS))]
         spacing = 150.0
         p.save()
         p.setClipRect(QRectF(left, first - 10, width, 2 * lane_h + 60))
