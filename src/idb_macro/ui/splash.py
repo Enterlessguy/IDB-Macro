@@ -119,7 +119,7 @@ class SplashWindow(QWidget):
         p.setFont(product)
         p.setPen(QColor(theme.FAINT))
         p.drawText(QRectF(rect.left(), rule_y + 14 * scale, rect.width(), 24 * scale),
-                   Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignTop, "I-DB MACRO")
+                   Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignTop, "IDB-MACRO")
         p.end()
 
     @staticmethod

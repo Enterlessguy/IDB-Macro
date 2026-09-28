@@ -4,12 +4,12 @@ VSVersionInfo(
   kids=[
     StringFileInfo([StringTable('040904B0', [
       StringStruct('CompanyName', 'Intelligence Database'),
-      StringStruct('FileDescription', 'I-DB Macro'),
+      StringStruct('FileDescription', 'IDB-Macro'),
       StringStruct('FileVersion', '1.2.0'),
       StringStruct('InternalName', 'IDB-Macro'),
       StringStruct('LegalCopyright', 'Copyright (c) 2026 Intelligence Database. MIT License.'),
       StringStruct('OriginalFilename', 'IDB-Macro.exe'),
-      StringStruct('ProductName', 'I-DB Macro'),
+      StringStruct('ProductName', 'IDB-Macro'),
       StringStruct('ProductVersion', '1.2.0')])]),
     VarFileInfo([VarStruct('Translation', [1033, 1200])])
   ]

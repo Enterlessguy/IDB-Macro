@@ -178,7 +178,7 @@ class ProfileBar(QFrame):
             return
         safe = "".join(ch if ch.isalnum() or ch in " -_" else "_" for ch in p.name).strip() or "setup"
         path, _ = QFileDialog.getSaveFileName(self, "Export setup", str(Path.home() / f"{safe}.json"),
-                                              "I-DB Macro files (*.json)")
+                                              "IDB-Macro files (*.json)")
         if path:
             try:
                 export_profiles(Path(path), [p])
@@ -186,7 +186,7 @@ class ProfileBar(QFrame):
                 self.error.setText(str(exc))
 
     def import_file(self) -> None:
-        path, _ = QFileDialog.getOpenFileName(self, "Import setups", str(Path.home()), "I-DB Macro files (*.json)")
+        path, _ = QFileDialog.getOpenFileName(self, "Import setups", str(Path.home()), "IDB-Macro files (*.json)")
         if not path:
             return
         try:

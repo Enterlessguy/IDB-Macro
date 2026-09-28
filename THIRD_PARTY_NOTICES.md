@@ -1,6 +1,6 @@
 # Third-party notices
 
-I-DB Macro's own source is MIT licensed (see [LICENSE](LICENSE)). It depends
+IDB-Macro's own source is MIT licensed (see [LICENSE](LICENSE)). It depends
 on the following libraries, which keep their own licences. The source
 repository contains none of their code.
 

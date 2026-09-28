@@ -319,7 +319,7 @@ class WindowsBackend(Backend):
             raise BackendError("There is no window at that spot.")
         root = _h(GetAncestor(hwnd, GA_ROOT)) or hwnd
         if window_pid(root) == self.own_pid:
-            raise BackendError("That is I-DB Macro itself. Pick another window.")
+            raise BackendError("That is IDB-Macro itself. Pick another window.")
         root_pt, child_pt = wt.POINT(x, y), wt.POINT(x, y)
         ScreenToClient(root, ctypes.byref(root_pt))
         ScreenToClient(hwnd, ctypes.byref(child_pt))
@@ -439,7 +439,7 @@ class WindowsBackend(Backend):
         if err == ERROR_ACCESS_DENIED:
             raise TargetDenied(
                 "Windows blocked input to this window because it runs with higher privileges. "
-                "Run I-DB Macro as administrator to control it.")
+                "Run IDB-Macro as administrator to control it.")
         if err == ERROR_INVALID_WINDOW_HANDLE or not IsWindow(hwnd):
             raise TargetLost("The target window closed.")
         if err in (0, ERROR_TIMEOUT):
@@ -594,7 +594,7 @@ class WindowsBackend(Backend):
         if err == ERROR_ACCESS_DENIED:
             raise TargetDenied(
                 "Windows blocked input to this window because it runs with higher privileges. "
-                "Run I-DB Macro as administrator to control it.")
+                "Run IDB-Macro as administrator to control it.")
         if err == ERROR_INVALID_WINDOW_HANDLE or not IsWindow(hwnd):
             raise TargetLost("The target window closed.")
         raise BackendError(f"Could not send input to the window (error {err}).")

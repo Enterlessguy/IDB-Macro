@@ -66,7 +66,7 @@ class UpdatesPage(Page):
         self.w.progress.connect(self._progress)
         self.w.downloaded.connect(self._downloaded)
 
-        card = Card("I-DB Macro")
+        card = Card("IDB-Macro")
         self.current = label(f"You have version {__version__}.", "muted")
         self.status = Message("muted")
         self.check_btn = button("Check for updates", "primary")
@@ -82,7 +82,7 @@ class UpdatesPage(Page):
         self.bar.hide()
         card.add(self.bar)
         card.add(self.status)
-        self.auto = Toggle("Check for updates when I-DB Macro starts", controller.settings.check_updates)
+        self.auto = Toggle("Check for updates when IDB-Macro starts", controller.settings.check_updates)
         self.auto.toggled.connect(self._set_auto)
         card.add(self.auto)
         self.body.addWidget(card)

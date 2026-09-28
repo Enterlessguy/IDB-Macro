@@ -46,7 +46,7 @@ class SettingsPage(Page):
         general = Card("Behaviour")
         self.toggles = {
             "show_splash": Toggle("Show the startup animation", s.show_splash),
-            "always_on_top": Toggle("Keep I-DB Macro above other windows", s.always_on_top),
+            "always_on_top": Toggle("Keep IDB-Macro above other windows", s.always_on_top),
             "close_to_tray": Toggle("Closing the window keeps it running in the tray", s.close_to_tray),
             "failsafe_corner": Toggle("Fail-safe: slam the cursor into the top-left corner to stop",
                                       s.failsafe_corner),
@@ -63,7 +63,7 @@ class SettingsPage(Page):
         self.smart_flags = {
             "smart_focus_lock": Toggle("Only click and type in the window you started in (pauses when you switch "
                                        "apps, and lets go of held keys)", s.smart_focus_lock),
-            "smart_avoid_shell": Toggle("Never click the taskbar, the desktop or I-DB Macro itself",
+            "smart_avoid_shell": Toggle("Never click the taskbar, the desktop or IDB-Macro itself",
                                         s.smart_avoid_shell),
         }
         for name, toggle in self.smart_flags.items():
@@ -74,7 +74,7 @@ class SettingsPage(Page):
 
         about = Card("About")
         backend = controller.backend
-        about.add(label(f"I-DB Macro {__version__}  ·  Intelligence Database", "muted"))
+        about.add(label(f"IDB-Macro {__version__}  ·  Intelligence Database", "muted"))
         about.add(label(f"Input engine: {backend.name}  ·  background input "
                         f"{'available' if backend.supports_background else 'not available'}", "faint"))
         if backend.notice:

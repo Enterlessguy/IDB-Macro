@@ -27,7 +27,7 @@ class DumbView(QWidget):
         cube = QLabel()
         cube.setPixmap(QPixmap(str(theme.ASSETS / "cube.png")).scaled(
             34, 34, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
-        title = QLabel("I-DB Macro")
+        title = QLabel("IDB-Macro")
         title.setFont(theme.ui_font(17, QFont.Weight.Bold))
         pill = label("DUMB MODE", "section")
         outer.addLayout(hbox(cube, title, None, pill, spacing=10))

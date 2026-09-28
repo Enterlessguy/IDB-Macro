@@ -35,9 +35,9 @@ def _initial_geometry() -> QRect:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="idb-macro", description="I-DB Macro")
+    parser = argparse.ArgumentParser(prog="idb-macro", description="IDB-Macro")
     parser.add_argument("--no-splash", action="store_true", help="skip the startup animation")
-    parser.add_argument("--version", action="version", version=f"I-DB Macro {__version__}")
+    parser.add_argument("--version", action="version", version=f"IDB-Macro {__version__}")
     parser.add_argument("--debug", action="store_true", help="verbose logging to the console")
     args, qt_args = parser.parse_known_args(argv if argv is not None else sys.argv[1:])
 
@@ -46,7 +46,7 @@ def main(argv: list[str] | None = None) -> int:
     _set_windows_app_id()
     QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
     app = QApplication([sys.argv[0], *qt_args])
-    app.setApplicationName("I-DB Macro")
+    app.setApplicationName("IDB-Macro")
     app.setOrganizationName("Intelligence Database")
     app.setStyle("Fusion")
 
@@ -61,7 +61,7 @@ def main(argv: list[str] | None = None) -> int:
     lock = QLockFile(str(store.dir / "instance.lock"))
     lock.setStaleLockTime(0)
     if not lock.tryLock(100):
-        QMessageBox.information(None, "I-DB Macro", "I-DB Macro is already running. Look for its icon in the "
+        QMessageBox.information(None, "IDB-Macro", "IDB-Macro is already running. Look for its icon in the "
                                                     "system tray.")
         return 0
 

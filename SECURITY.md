@@ -7,7 +7,7 @@ Please report vulnerabilities privately through GitHub's
 rather than in a public issue. Include the version, your operating system and
 the steps to reproduce. You should get a reply within a week.
 
-## What I-DB Macro does and does not do
+## What IDB-Macro does and does not do
 
 - **Network use is limited to updates.** The app only contacts GitHub, to
   check this repository's releases (at startup if enabled, and on the Updates
@@ -56,7 +56,7 @@ The recorder saves what you type into the macro, in plain text in
 ## Window titles
 
 Titles of other windows (for example browser tabs) are always shown as plain
-text, so a web page can't style or spoof the target shown in I-DB Macro.
+text, so a web page can't style or spoof the target shown in IDB-Macro.
 
 ## Emergency stop
 
