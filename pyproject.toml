@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "idb-macro"
+dynamic = ["version"]
+description = "Autoclicker, key repeater and macro recorder in one app, with background input for minimized windows."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{ name = "Intelligence Database" }]
+requires-python = ">=3.10"
+keywords = ["autoclicker", "macro", "automation", "key-repeater", "input"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications :: Qt",
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Desktop Environment",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "PySide6-Essentials>=6.6",
+    "pynput>=1.8",
+    "python-xlib>=0.33; sys_platform == 'linux'",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "pyinstaller>=6.6"]
+
+[project.gui-scripts]
+idb-macro = "idb_macro.app:main"
+
+[project.urls]
+Source = "https://github.com/Enterlessguy/IDB-Macro"
+Issues = "https://github.com/Enterlessguy/IDB-Macro/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "idb_macro.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+idb_macro = ["assets/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: drives a real window through the OS input backend"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S"]
+ignore = ["S101", "S603", "S311", "S110"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S"]

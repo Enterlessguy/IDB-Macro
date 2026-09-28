@@ -1,0 +1,35 @@
+name: App compatibility report
+description: Tell us whether background mode works with a particular app.
+labels: [compatibility]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App name and version
+    validations:
+      required: true
+  - type: checkboxes
+    id: works
+    attributes:
+      label: What works in background mode?
+      options:
+        - label: Clicks
+        - label: Keys
+        - label: Typing text
+        - label: Scrolling
+        - label: Works while the app is minimized
+  - type: dropdown
+    id: spoof
+    attributes:
+      label: Was "Pretend the window is focused" on?
+      options: ["On", "Off", Tried both]
+  - type: input
+    id: os
+    attributes:
+      label: OS and version
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
